@@ -1,6 +1,8 @@
 <script setup>
 import {ref} from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const login = ref();
 const password = ref();
 const success = ref(false); 
@@ -12,6 +14,7 @@ const clickHandler = () => {
     }
     errors.value = underfined;
     success.value = true;
+    router.push({name: "task"})
 
 }
 </script>
@@ -20,7 +23,7 @@ const clickHandler = () => {
     <template v-if="!success">
         <input type="text" placeholder="Логин" v-model="login"/>
         <input type="password" placeholder="Пароль" v-model="password"/>
-        <button type="button" @click="clickHandler"></button>
+        <button type="button" @click="clickHandler">Go</button>
         <div v-if="errors !=null" class="error--text">{{ errors }}</div>
     </template>
     <div v="else">

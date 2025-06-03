@@ -10,8 +10,11 @@ import SignForm from './components/SignForm.vue'
   </header>
 
   <main>
-    <SignForm></SignForm>
+    <router-view></router-view>
   </main>
+  <footer>
+    
+  </footer>
 </template>
 
 <style scoped>
